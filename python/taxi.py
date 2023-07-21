@@ -22,8 +22,6 @@ class Taxi:
             self.availability = True
         thread = Thread(target=moving)
         thread.start()
-        # make the car available after destination reached
-    
 
     def is_busy(self):
         return self.availability
@@ -52,9 +50,6 @@ class Taxi:
             self.move_to(drop)
         else:
             print("Booking Cancelled")
-
-            
-
 
 @dataclass
 class CallTaxiSystem:
@@ -116,7 +111,6 @@ station_names = "ABCDEF"
 stations = []
 for (i, names) in enumerate(station_names):
     stations.append(Station(names, i))
-
 
 cars = [
     Taxi('Taxi 1', stations[0]),
